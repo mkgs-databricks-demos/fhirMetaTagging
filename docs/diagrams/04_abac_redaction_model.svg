@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 400" font-family="Consolas, monospace" font-size="11">
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#888"/>
+    </marker>
+  </defs>
+  <rect width="750" height="400" fill="#111" rx="8"/>
+
+  <!-- Gold Validated -->
+  <rect x="20" y="30" width="200" height="60" rx="6" fill="#0a6" stroke="#0c8"/>
+  <text x="120" y="55" fill="#fff" text-anchor="middle" font-weight="bold" font-size="11">gold_validated_resources</text>
+  <text x="120" y="75" fill="#cfc" text-anchor="middle" font-size="8">resource VARIANT (full FHIR JSON)</text>
+
+  <line x1="120" y1="90" x2="120" y2="115" stroke="#888" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="180" y="108" fill="#888" font-size="8">explode by ref_dictionary_elements</text>
+
+  <!-- Gold Elements -->
+  <rect x="20" y="120" width="350" height="130" rx="6" fill="#07a" stroke="#09c"/>
+  <text x="195" y="142" fill="#fff" text-anchor="middle" font-weight="bold" font-size="11">gold_resource_elements</text>
+  <text x="195" y="158" fill="#adf" text-anchor="middle" font-size="8">One row per FHIR element</text>
+
+  <text x="35" y="178" fill="#ccc" font-size="9">visible_resource_type: Condition</text>
+  <text x="35" y="194" fill="#ccc" font-size="9">visible_date: 2026-03-27</text>
+  <text x="35" y="210" fill="#ccc" font-size="9">visible_code_display: Office Visit</text>
+  <text x="35" y="226" fill="#ffab00" font-size="9">element_value: "J06.9" ← ABAC masks this</text>
+  <text x="35" y="242" fill="#a06" font-size="9">element_sensitivity: PHI_CLINICAL</text>
+
+  <!-- ABAC Mask -->
+  <line x1="370" y1="185" x2="410" y2="185" stroke="#a06" stroke-width="2" marker-end="url(#ah)"/>
+
+  <rect x="415" y="140" width="150" height="90" rx="6" fill="#a06" stroke="#c08"/>
+  <text x="490" y="162" fill="#fff" text-anchor="middle" font-weight="bold" font-size="10">ABAC Column Mask</text>
+  <text x="490" y="180" fill="#fac" text-anchor="middle" font-size="8">mask_element_value()</text>
+  <text x="490" y="196" fill="#fac" text-anchor="middle" font-size="8">USING COLUMNS</text>
+  <text x="490" y="212" fill="#fac" text-anchor="middle" font-size="8">(element_sensitivity)</text>
+
+  <!-- Decision -->
+  <line x1="490" y1="230" x2="490" y2="260" stroke="#888" stroke-width="2"/>
+  <text x="490" y="275" fill="#888" text-anchor="middle" font-size="9">is_account_group_member('pha_clinical_reviewers')?</text>
+
+  <!-- Clinical Reviewer -->
+  <line x1="390" y1="280" x2="250" y2="310" stroke="#0a6" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="100" y="310" width="300" height="70" rx="6" fill="#0a6" stroke="#0c8"/>
+  <text x="250" y="332" fill="#fff" text-anchor="middle" font-weight="bold" font-size="10">Clinical Reviewer Sees</text>
+  <text x="115" y="350" fill="#ccc" font-size="9">visible_date: 2026-03-27  |  visible_code: Office Visit</text>
+  <text x="115" y="366" fill="#0f0" font-size="9">element_value: "J06.9"  ← FULL VALUE</text>
+
+  <!-- Compliance Auditor -->
+  <line x1="590" y1="280" x2="600" y2="310" stroke="#a60" stroke-width="2" marker-end="url(#ah)"/>
+  <rect x="430" y="310" width="300" height="70" rx="6" fill="#a60" stroke="#c80"/>
+  <text x="580" y="332" fill="#fff" text-anchor="middle" font-weight="bold" font-size="10">Compliance Auditor Sees</text>
+  <text x="445" y="350" fill="#ccc" font-size="9">visible_date: 2026-03-27  |  visible_code: Office Visit</text>
+  <text x="445" y="366" fill="#f66" font-size="9">element_value: "[REDACTED]"  ← MASKED</text>
+
+  <!-- Labels -->
+  <text x="300" y="295" fill="#0a6" font-size="8">YES</text>
+  <text x="610" y="295" fill="#a60" font-size="8">NO</text>
+</svg>

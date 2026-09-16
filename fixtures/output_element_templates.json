@@ -1,0 +1,98 @@
+{
+  "_comment": "PLACEHOLDER \u2014 finalize after L200-B exploratory analysis of pha-data-dictionary.xlsx. Each entry defines one of the 11 Output elements that must be generated.",
+  "_source": "Phase 2 Instructions PDF, Section 8 (Tier 2 Scope) + pha-data-dictionary.xlsx Output rows",
+  "elements": [
+    {
+      "element_name": "Preliminary Risk Flag",
+      "fhir_resource": "Flag",
+      "expected_tags": [
+        "PART_C1",
+        "AI_GENERATED",
+        "ADVISORY_ONLY"
+      ]
+    },
+    {
+      "element_name": "Notification/Reminder Log",
+      "fhir_resource": "Communication",
+      "expected_tags": [
+        "PART_C1",
+        "AI_GENERATED"
+      ]
+    },
+    {
+      "element_name": "Completeness/Discrepancy Score",
+      "fhir_resource": "ClinicalImpression",
+      "expected_tags": [
+        "PART_B",
+        "AI_GENERATED"
+      ]
+    },
+    {
+      "element_name": "Discrepancy Flags",
+      "fhir_resource": "Flag",
+      "expected_tags": [
+        "PART_B",
+        "AI_GENERATED"
+      ]
+    },
+    {
+      "element_name": "Record Review Queue Priority",
+      "fhir_resource": "Task",
+      "expected_tags": [
+        "PART_C1",
+        "AI_GENERATED"
+      ]
+    },
+    {
+      "element_name": "Record Review Throughput Metrics",
+      "fhir_resource": "MeasureReport",
+      "expected_tags": [
+        "PART_C1",
+        "AI_GENERATED"
+      ]
+    },
+    {
+      "element_name": "MHA AI/ML Risk Score",
+      "fhir_resource": "RiskAssessment",
+      "expected_tags": [
+        "PART_C1",
+        "AI_GENERATED",
+        "ADVISORY_ONLY"
+      ]
+    },
+    {
+      "element_name": "MHA AI Summarization",
+      "fhir_resource": "ClinicalImpression",
+      "expected_tags": [
+        "PART_C1",
+        "AI_GENERATED",
+        "ADVISORY_ONLY"
+      ]
+    },
+    {
+      "element_name": "Composite Multi-Part Risk Visualization",
+      "fhir_resource": "RiskAssessment",
+      "expected_tags": [
+        "PART_C2",
+        "AI_GENERATED"
+      ]
+    },
+    {
+      "element_name": "AI-Drafted Recommendation/Referral",
+      "fhir_resource": "ServiceRequest",
+      "expected_tags": [
+        "PART_C2",
+        "AI_GENERATED",
+        "ADVISORY_ONLY"
+      ]
+    },
+    {
+      "element_name": "AI/Provider Audit Trail",
+      "fhir_resource": "Provenance",
+      "expected_tags": [
+        "PART_C2",
+        "AI_GENERATED"
+      ]
+    }
+  ]
+}

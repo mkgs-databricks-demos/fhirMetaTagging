@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520" font-family="Consolas, monospace" font-size="13">
+  <defs>
+    <style>
+      .box { rx: 6; ry: 6; }
+      .label { font-weight: bold; fill: #fff; }
+      .field { fill: #e0e0e0; font-size: 11; }
+      .arrow { stroke: #888; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#888"/>
+    </marker>
+  </defs>
+
+  <!-- Bundle container -->
+  <rect x="20" y="10" width="660" height="500" class="box" fill="#1a1a2e" stroke="#444"/>
+  <text x="40" y="35" class="label" font-size="15">Bundle</text>
+  <text x="40" y="55" class="field">resourceType: "Bundle"</text>
+  <text x="40" y="72" class="field">id: "pt-0001-bundle"</text>
+  <text x="40" y="89" class="field">type: "transaction"</text>
+
+  <!-- meta.tag on Bundle -->
+  <rect x="40" y="100" width="280" height="45" class="box" fill="#333" stroke="#666"/>
+  <text x="55" y="118" fill="#ffab00" font-size="11" font-weight="bold">meta.tag</text>
+  <text x="55" y="135" class="field">system: "pha-governance"  code: "CORE_COVERAGE_SET"</text>
+
+  <!-- entry array -->
+  <rect x="40" y="160" width="620" height="330" class="box" fill="#16213e" stroke="#555"/>
+  <text x="55" y="182" class="label" font-size="13">entry[ ]</text>
+
+  <!-- Entry 0: Patient -->
+  <rect x="60" y="195" width="280" height="80" class="box" fill="#0f3460" stroke="#077a9d"/>
+  <text x="75" y="215" fill="#8bcae7" font-weight="bold" font-size="12">entry[0].resource</text>
+  <text x="75" y="233" class="field">resourceType: "Patient"</text>
+  <text x="75" y="248" class="field">id: "pt-0001"</text>
+  <text x="75" y="263" fill="#ffab00" font-size="10">meta.tag: [PART_A, PII_SENSITIVE]</text>
+
+  <!-- Entry 1: Condition -->
+  <rect x="360" y="195" width="280" height="80" class="box" fill="#0f3460" stroke="#077a9d"/>
+  <text x="375" y="215" fill="#8bcae7" font-weight="bold" font-size="12">entry[1].resource</text>
+  <text x="375" y="233" class="field">resourceType: "Condition"</text>
+  <text x="375" y="248" class="field">id: "pt-0001-cond-1"</text>
+  <text x="375" y="263" fill="#ffab00" font-size="10">meta.tag: [PART_A, PHI_CLINICAL]</text>
+
+  <!-- Entry 2: Observation -->
+  <rect x="60" y="290" width="280" height="80" class="box" fill="#0f3460" stroke="#077a9d"/>
+  <text x="75" y="310" fill="#8bcae7" font-weight="bold" font-size="12">entry[2].resource</text>
+  <text x="75" y="328" class="field">resourceType: "Observation"</text>
+  <text x="75" y="343" class="field">id: "pt-0001-obs-lab-1"</text>
+  <text x="75" y="358" fill="#ffab00" font-size="10">meta.tag: [PART_B, PHI_CLINICAL]</text>
+
+  <!-- Entry 3: RiskAssessment -->
+  <rect x="360" y="290" width="280" height="80" class="box" fill="#0f3460" stroke="#077a9d"/>
+  <text x="375" y="310" fill="#8bcae7" font-weight="bold" font-size="12">entry[3].resource</text>
+  <text x="375" y="328" class="field">resourceType: "RiskAssessment"</text>
+  <text x="375" y="343" class="field">id: "pt-0001-risk-c1"</text>
+  <text x="375" y="358" fill="#ffab00" font-size="10">meta.tag: [PART_C1, AI_GENERATED, ADVISORY_ONLY]</text>
+
+  <!-- Ellipsis -->
+  <rect x="60" y="385" width="580" height="35" class="box" fill="#1a1a2e" stroke="#444"/>
+  <text x="300" y="407" fill="#888" text-anchor="middle" font-size="12">... additional resources (Provenance, Organization, Flag, Task, etc.) ...</text>
+
+  <!-- Entry N: Provenance -->
+  <rect x="60" y="430" width="580" height="45" class="box" fill="#0f3460" stroke="#077a9d"/>
+  <text x="75" y="450" fill="#8bcae7" font-weight="bold" font-size="12">entry[N].resource</text>
+  <text x="250" y="450" class="field">resourceType: "Provenance"  id: "pt-0001-prov-audit"</text>
+  <text x="75" y="465" fill="#ffab00" font-size="10">meta.tag: [PART_C2, AI_GENERATED]  entity.what → RiskAssessment/pt-0001-risk-c1</text>
+
+  <!-- Legend -->
+  <rect x="420" y="100" width="230" height="45" class="box" fill="#333" stroke="#666"/>
+  <text x="435" y="118" fill="#ffab00" font-size="11" font-weight="bold">pha-governance tags</text>
+  <text x="435" y="135" class="field">Derived from data dictionary + taxonomy</text>
+</svg>

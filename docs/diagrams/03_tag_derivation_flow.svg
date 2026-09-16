@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 250" font-family="Consolas, monospace" font-size="11">
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#888"/>
+    </marker>
+  </defs>
+  <rect width="750" height="250" fill="#111" rx="8"/>
+
+  <!-- Silver Resource -->
+  <rect x="20" y="50" width="140" height="80" rx="6" fill="#0f3460" stroke="#077a9d"/>
+  <text x="90" y="72" fill="#8bcae7" text-anchor="middle" font-weight="bold" font-size="10">Silver Resource</text>
+  <text x="30" y="92" fill="#ccc" font-size="8">resource (VARIANT)</text>
+  <text x="30" y="108" fill="#ccc" font-size="8">resource_type (STRING)</text>
+  <text x="30" y="124" fill="#ccc" font-size="8">resource_id (STRING)</text>
+
+  <!-- Reference Tables -->
+  <rect x="20" y="155" width="140" height="70" rx="6" fill="#07a" stroke="#09c"/>
+  <text x="90" y="175" fill="#fff" text-anchor="middle" font-weight="bold" font-size="10">Reference MVs</text>
+  <text x="30" y="195" fill="#adf" font-size="8">ref_dictionary_elements</text>
+  <text x="30" y="211" fill="#adf" font-size="8">ref_discriminator_rules</text>
+
+  <!-- Join -->
+  <line x1="160" y1="90" x2="218" y2="90" stroke="#888" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="160" y1="190" x2="218" y2="130" stroke="#07a" stroke-width="2" marker-end="url(#ah)"/>
+
+  <rect x="220" y="60" width="180" height="100" rx="6" fill="#333" stroke="#888"/>
+  <text x="310" y="82" fill="#fff" text-anchor="middle" font-weight="bold" font-size="10">Tag Derivation Join</text>
+  <text x="230" y="100" fill="#ccc" font-size="8">1. JOIN on resource_type</text>
+  <text x="230" y="116" fill="#ccc" font-size="8">2. Instance Discriminator</text>
+  <text x="230" y="132" fill="#ccc" font-size="8">3. tag_json_array lookup</text>
+  <text x="230" y="148" fill="#ffab00" font-size="8">4. concat() tag injection</text>
+
+  <!-- Output -->
+  <line x1="400" y1="110" x2="438" y2="110" stroke="#0a6" stroke-width="2" marker-end="url(#ah)"/>
+
+  <rect x="440" y="30" width="290" height="190" rx="6" fill="#0a6" stroke="#0c8"/>
+  <text x="585" y="52" fill="#fff" text-anchor="middle" font-weight="bold" font-size="10">gold_tagged_resources</text>
+
+  <text x="455" y="72" fill="#ccc" font-size="8">resource (original VARIANT — untouched)</text>
+  <text x="455" y="88" fill="#ffab00" font-size="8">tagged_resource_json (meta.tag injected)</text>
+  <text x="455" y="104" fill="#ccc" font-size="8">governance_tags (STRING)</text>
+  <text x="455" y="120" fill="#ccc" font-size="8">element_id, dd_3024_part</text>
+
+  <text x="455" y="145" fill="#888" font-size="8">Pre-computed booleans:</text>
+  <text x="455" y="161" fill="#0f0" font-size="8">✓ is_tagged</text>
+  <text x="455" y="177" fill="#0f0" font-size="8">✓ is_known_resource_type</text>
+  <text x="455" y="193" fill="#888" font-size="8">(sensitivity + chain + hitl in gold_validated)</text>
+
+  <text x="585" y="225" fill="#0a6" text-anchor="middle" font-size="8">Photon-native — no UDFs, no variant_insert</text>
+</svg>

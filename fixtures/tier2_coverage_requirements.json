@@ -1,0 +1,49 @@
+{
+  "_comment": "Tier 2 coverage requirements from Phase 2 Instructions PDF, page 9",
+  "_source": "Phase 2 Instructions PDF, Section 8 \u2014 Requirements for a Tier 2 Pass/Fail",
+  "minimum_records": 10,
+  "coverage_requirements": [
+    {
+      "dimension": "component_type",
+      "required_values": [
+        "Active",
+        "Reserve"
+      ],
+      "minimum_per_value": 1
+    },
+    {
+      "dimension": "part_b_discrepancy",
+      "required_values": [
+        true,
+        false
+      ],
+      "minimum_per_value": 1
+    },
+    {
+      "dimension": "composite_risk",
+      "required_values": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "minimum_per_value": 1
+    }
+  ],
+  "excluded_elements": {
+    "_comment": "These 5 elements represent Provider downstream review \u2014 cannot exist for unreviewed records (PDF page 9)",
+    "elements": [
+      "Provider Notification",
+      "Behavioral Health Determination",
+      "Provider-Approved Recommendation/Referral",
+      "Digital Signature/Certification",
+      "IMR Category Determination",
+      "IMR Notification to Commander/Service Member"
+    ],
+    "resource_count_impact": {
+      "Communication": "1 not 3 \u2014 only Notification/Reminder Log",
+      "ServiceRequest": "1 not 2 \u2014 only AI-Drafted Recommendation",
+      "Provenance": "2 not 3 \u2014 Audit Trail + Authentication Method only",
+      "Observation": "1 not 2 \u2014 only lab result, no IMR Category Determination"
+    }
+  }
+}

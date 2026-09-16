@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 400" font-family="Consolas, monospace" font-size="12">
+  <defs>
+    <style>
+      .box { rx: 8; ry: 8; }
+      .title { font-weight: bold; fill: #fff; font-size: 14; }
+      .subtitle { fill: #aaa; font-size: 11; }
+      .col { fill: #ccc; font-size: 10; }
+      .arrow { stroke: #888; stroke-width: 2; fill: none; marker-end: url(#ah); }
+      .arrow-prod { stroke: #0a6; stroke-width: 2.5; fill: none; marker-end: url(#ah-green); }
+      .arrow-agent { stroke: #07a; stroke-width: 2.5; fill: none; marker-end: url(#ah-blue); }
+    </style>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#888"/>
+    </marker>
+    <marker id="ah-green" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0a6"/>
+    </marker>
+    <marker id="ah-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#07a"/>
+    </marker>
+  </defs>
+
+  <!-- Silver -->
+  <rect x="20" y="160" width="140" height="60" class="box" fill="#333" stroke="#666"/>
+  <text x="90" y="185" class="title" text-anchor="middle" font-size="12">silver_resources</text>
+  <text x="90" y="200" class="subtitle" text-anchor="middle">Streaming Table</text>
+
+  <!-- Gold Tagged -->
+  <rect x="200" y="100" width="200" height="90" class="box" fill="#0a6" stroke="#0c8"/>
+  <text x="300" y="125" class="title" text-anchor="middle">gold_validated_resources</text>
+  <text x="300" y="142" class="subtitle" text-anchor="middle">Production Terminal Output</text>
+  <text x="300" y="158" class="col" text-anchor="middle">resource (VARIANT) | tagged_resource_json</text>
+  <text x="300" y="172" class="col" text-anchor="middle">governance_tags | conformance booleans</text>
+
+  <!-- Gold Elements -->
+  <rect x="200" y="220" width="200" height="90" class="box" fill="#07a" stroke="#09c"/>
+  <text x="300" y="245" class="title" text-anchor="middle">gold_resource_elements</text>
+  <text x="300" y="262" class="subtitle" text-anchor="middle">Genie Agent Optimized</text>
+  <text x="300" y="278" class="col" text-anchor="middle">element_value | element_sensitivity</text>
+  <text x="300" y="292" class="col" text-anchor="middle">visible_date | visible_code_display</text>
+
+  <!-- Production consumers -->
+  <rect x="500" y="40" width="120" height="40" class="box" fill="#333" stroke="#0a6"/>
+  <text x="560" y="65" fill="#0a6" text-anchor="middle" font-size="11">Kafka / LTAP</text>
+
+  <rect x="500" y="95" width="120" height="40" class="box" fill="#333" stroke="#0a6"/>
+  <text x="560" y="120" fill="#0a6" text-anchor="middle" font-size="11">Lakebase</text>
+
+  <rect x="500" y="150" width="120" height="40" class="box" fill="#666" stroke="#888"/>
+  <text x="560" y="175" fill="#ccc" text-anchor="middle" font-size="11">output_bundles (MV)</text>
+
+  <!-- Agent consumers -->
+  <rect x="500" y="225" width="120" height="40" class="box" fill="#333" stroke="#07a"/>
+  <text x="560" y="250" fill="#07a" text-anchor="middle" font-size="11">Genie Agent</text>
+
+  <rect x="500" y="280" width="120" height="40" class="box" fill="#333" stroke="#07a"/>
+  <text x="560" y="305" fill="#07a" text-anchor="middle" font-size="11">AI/BI Dashboard</text>
+
+  <!-- ABAC badge -->
+  <rect x="630" y="225" width="100" height="40" class="box" fill="#a06" stroke="#c08"/>
+  <text x="680" y="250" fill="#fff" text-anchor="middle" font-size="10" font-weight="bold">ABAC Mask</text>
+
+  <!-- ndjson -->
+  <rect x="640" y="150" width="90" height="40" class="box" fill="#444" stroke="#666"/>
+  <text x="685" y="175" fill="#888" text-anchor="middle" font-size="10">ndjson file</text>
+
+  <!-- Arrows -->
+  <line x1="160" y1="180" x2="198" y2="145" class="arrow"/>
+  <line x1="160" y1="200" x2="198" y2="260" class="arrow"/>
+
+  <line x1="400" y1="120" x2="498" y2="60" class="arrow-prod"/>
+  <line x1="400" y1="140" x2="498" y2="115" class="arrow-prod"/>
+  <line x1="400" y1="160" x2="498" y2="170" class="arrow"/>
+
+  <line x1="300" y1="190" x2="300" y2="218" class="arrow"/>
+
+  <line x1="400" y1="250" x2="498" y2="245" class="arrow-agent"/>
+  <line x1="400" y1="270" x2="498" y2="300" class="arrow-agent"/>
+
+  <line x1="620" y1="170" x2="638" y2="170" class="arrow"/>
+  <line x1="620" y1="245" x2="628" y2="245" class="arrow-agent"/>
+
+  <!-- Labels -->
+  <text x="90" y="145" fill="#888" text-anchor="middle" font-size="10">1 row per resource</text>
+  <text x="300" y="210" fill="#888" text-anchor="middle" font-size="10">STREAM(gold_validated)</text>
+  <text x="450" y="80" fill="#0a6" font-size="10">streaming</text>
+  <text x="450" y="200" fill="#888" font-size="10">batch (MV)</text>
+  <text x="450" y="240" fill="#07a" font-size="10">ABAC-masked</text>
+</svg>

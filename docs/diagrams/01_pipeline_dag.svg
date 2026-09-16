@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" font-family="Consolas, monospace" font-size="11">
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#888"/>
+    </marker>
+    <marker id="ah-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0a6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="700" fill="#111" rx="8"/>
+
+  <!-- Landing Zone -->
+  <rect x="20" y="15" width="180" height="130" rx="6" fill="#1a1a2e" stroke="#444"/>
+  <text x="110" y="35" fill="#888" text-anchor="middle" font-weight="bold" font-size="10">LANDING ZONE</text>
+  <text x="30" y="55" fill="#8bcae7" font-size="10">core/*.json (30)</text>
+  <text x="30" y="72" fill="#8bcae7" font-size="10">volume/*.ndjson (275)</text>
+  <text x="30" y="92" fill="#ffab00" font-size="10">taxonomy.json</text>
+  <text x="30" y="109" fill="#ffab00" font-size="10">dictionary.xlsx</text>
+  <text x="30" y="130" fill="#666" font-size="10">manifest.json</text>
+
+  <!-- Reference Path -->
+  <rect x="240" y="15" width="640" height="120" rx="6" fill="#1a1a2e" stroke="#ffab00" stroke-dasharray="4"/>
+  <text x="560" y="35" fill="#ffab00" text-anchor="middle" font-weight="bold" font-size="10">REFERENCE PATH (metadata-driven)</text>
+
+  <rect x="260" y="45" width="130" height="35" rx="4" fill="#333" stroke="#ffab00"/>
+  <text x="325" y="67" fill="#ffab00" text-anchor="middle" font-size="9">bronze_taxonomy ST</text>
+
+  <rect x="260" y="90" width="130" height="35" rx="4" fill="#333" stroke="#ffab00"/>
+  <text x="325" y="112" fill="#ffab00" text-anchor="middle" font-size="9">bronze_dictionary ST</text>
+
+  <rect x="420" y="45" width="120" height="35" rx="4" fill="#444" stroke="#ffab00"/>
+  <text x="480" y="67" fill="#ffab00" text-anchor="middle" font-size="9">ref_taxonomy SCD1</text>
+
+  <rect x="420" y="90" width="120" height="35" rx="4" fill="#444" stroke="#ffab00"/>
+  <text x="480" y="112" fill="#ffab00" text-anchor="middle" font-size="9">ref_tag_mapping SCD1</text>
+
+  <rect x="570" y="45" width="130" height="35" rx="4" fill="#444" stroke="#666"/>
+  <text x="635" y="67" fill="#ccc" text-anchor="middle" font-size="9">ref_taxonomy_history SCD2</text>
+
+  <rect x="570" y="90" width="130" height="35" rx="4" fill="#444" stroke="#666"/>
+  <text x="635" y="112" fill="#ccc" text-anchor="middle" font-size="9">ref_tag_mapping_history SCD2</text>
+
+  <rect x="730" y="60" width="130" height="30" rx="4" fill="#07a" stroke="#09c"/>
+  <text x="795" y="80" fill="#fff" text-anchor="middle" font-size="9">ref_dictionary_elements MV</text>
+
+  <rect x="730" y="95" width="130" height="30" rx="4" fill="#07a" stroke="#09c"/>
+  <text x="795" y="115" fill="#fff" text-anchor="middle" font-size="9">ref_discriminator_rules MV</text>
+
+  <!-- Arrows in reference path -->
+  <line x1="390" y1="62" x2="418" y2="62" stroke="#ffab00" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="390" y1="107" x2="418" y2="107" stroke="#ffab00" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="540" y1="62" x2="568" y2="62" stroke="#666" stroke-width="1" marker-end="url(#ah)"/>
+  <line x1="540" y1="107" x2="568" y2="107" stroke="#666" stroke-width="1" marker-end="url(#ah)"/>
+  <line x1="540" y1="107" x2="728" y2="75" stroke="#07a" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="540" y1="107" x2="728" y2="110" stroke="#07a" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- Clinical Data Path -->
+  <rect x="20" y="160" width="860" height="140" rx="6" fill="#1a1a2e" stroke="#077a9d" stroke-dasharray="4"/>
+  <text x="450" y="180" fill="#077a9d" text-anchor="middle" font-weight="bold" font-size="10">CLINICAL DATA PATH (streaming)</text>
+
+  <rect x="40" y="195" width="140" height="30" rx="4" fill="#0f3460" stroke="#077a9d"/>
+  <text x="110" y="215" fill="#8bcae7" text-anchor="middle" font-size="9">bronze_core ST</text>
+
+  <rect x="40" y="235" width="140" height="30" rx="4" fill="#0f3460" stroke="#077a9d"/>
+  <text x="110" y="255" fill="#8bcae7" text-anchor="middle" font-size="9">bronze_volume ST</text>
+
+  <rect x="220" y="215" width="140" height="30" rx="4" fill="#0f3460" stroke="#077a9d"/>
+  <text x="290" y="235" fill="#8bcae7" text-anchor="middle" font-size="9">bronze_bundles ST</text>
+
+  <rect x="400" y="215" width="140" height="30" rx="4" fill="#0f3460" stroke="#077a9d"/>
+  <text x="470" y="235" fill="#8bcae7" text-anchor="middle" font-size="9">silver_resources ST</text>
+
+  <!-- Arrows -->
+  <line x1="180" y1="210" x2="218" y2="225" stroke="#077a9d" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="180" y1="250" x2="218" y2="235" stroke="#077a9d" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="360" y1="230" x2="398" y2="230" stroke="#077a9d" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- Gold Layer -->
+  <rect x="20" y="320" width="860" height="180" rx="6" fill="#1a1a2e" stroke="#0a6" stroke-dasharray="4"/>
+  <text x="450" y="340" fill="#0a6" text-anchor="middle" font-weight="bold" font-size="10">GOLD LAYER</text>
+
+  <rect x="40" y="355" width="180" height="35" rx="4" fill="#0a6" stroke="#0c8"/>
+  <text x="130" y="377" fill="#fff" text-anchor="middle" font-size="9">gold_tagged_resources ST</text>
+
+  <rect x="260" y="355" width="140" height="35" rx="4" fill="#555" stroke="#888"/>
+  <text x="330" y="377" fill="#ccc" text-anchor="middle" font-size="9">mv_bundle_flags MV</text>
+
+  <rect x="440" y="350" width="200" height="45" rx="4" fill="#0a6" stroke="#0c8" stroke-width="2"/>
+  <text x="540" y="370" fill="#fff" text-anchor="middle" font-weight="bold" font-size="10">gold_validated_resources</text>
+  <text x="540" y="385" fill="#cfc" text-anchor="middle" font-size="8">Production Terminal Output</text>
+
+  <rect x="440" y="410" width="200" height="45" rx="4" fill="#07a" stroke="#09c" stroke-width="2"/>
+  <text x="540" y="430" fill="#fff" text-anchor="middle" font-weight="bold" font-size="10">gold_resource_elements</text>
+  <text x="540" y="445" fill="#adf" text-anchor="middle" font-size="8">Genie Agent Optimized</text>
+
+  <rect x="680" y="355" width="180" height="35" rx="4" fill="#555" stroke="#888"/>
+  <text x="770" y="377" fill="#ccc" text-anchor="middle" font-size="9">output_bundles MV</text>
+
+  <!-- Gold arrows -->
+  <line x1="470" y1="245" x2="130" y2="353" stroke="#077a9d" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="220" y1="372" x2="258" y2="372" stroke="#888" stroke-width="1" marker-end="url(#ah)"/>
+  <line x1="220" y1="372" x2="438" y2="372" stroke="#0a6" stroke-width="1.5" marker-end="url(#ah-g)"/>
+  <line x1="400" y1="372" x2="438" y2="372" stroke="#888" stroke-width="1" marker-end="url(#ah)"/>
+  <line x1="540" y1="395" x2="540" y2="408" stroke="#07a" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="640" y1="372" x2="678" y2="372" stroke="#888" stroke-width="1" marker-end="url(#ah)"/>
+
+  <!-- Output Layer -->
+  <rect x="20" y="520" width="860" height="160" rx="6" fill="#1a1a2e" stroke="#666"/>
+  <text x="450" y="540" fill="#888" text-anchor="middle" font-weight="bold" font-size="10">CONSUMERS</text>
+
+  <rect x="40" y="555" width="140" height="35" rx="4" fill="#333" stroke="#0a6"/>
+  <text x="110" y="577" fill="#0a6" text-anchor="middle" font-size="9">Kafka / Lakebase</text>
+
+  <rect x="200" y="555" width="120" height="35" rx="4" fill="#333" stroke="#0a6"/>
+  <text x="260" y="577" fill="#0a6" text-anchor="middle" font-size="9">LTAP</text>
+
+  <rect x="340" y="555" width="140" height="35" rx="4" fill="#444" stroke="#888"/>
+  <text x="410" y="577" fill="#ccc" text-anchor="middle" font-size="9">ndjson file (govt)</text>
+
+  <rect x="520" y="555" width="140" height="35" rx="4" fill="#333" stroke="#07a"/>
+  <text x="590" y="577" fill="#07a" text-anchor="middle" font-size="9">Genie Agent</text>
+
+  <rect x="680" y="555" width="140" height="35" rx="4" fill="#333" stroke="#07a"/>
+  <text x="750" y="577" fill="#07a" text-anchor="middle" font-size="9">AI/BI Dashboard</text>
+
+  <rect x="660" y="555" width="20" height="35" rx="4" fill="#a06" stroke="#c08"/>
+  <text x="520" y="610" fill="#a06" font-size="9">ABAC column mask on element_value</text>
+
+  <!-- Consumer arrows -->
+  <line x1="540" y1="395" x2="110" y2="553" stroke="#0a6" stroke-width="1.5" marker-end="url(#ah-g)"/>
+  <line x1="540" y1="395" x2="260" y2="553" stroke="#0a6" stroke-width="1.5" marker-end="url(#ah-g)"/>
+  <line x1="770" y1="390" x2="410" y2="553" stroke="#888" stroke-width="1" marker-end="url(#ah)"/>
+  <line x1="540" y1="455" x2="590" y2="553" stroke="#07a" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="540" y1="455" x2="750" y2="553" stroke="#07a" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- Legend -->
+  <rect x="40" y="640" width="12" height="12" fill="#0a6"/>
+  <text x="58" y="651" fill="#ccc" font-size="9">Production path (streaming)</text>
+  <rect x="220" y="640" width="12" height="12" fill="#07a"/>
+  <text x="238" y="651" fill="#ccc" font-size="9">Genie Agent path (ABAC-masked)</text>
+  <rect x="430" y="640" width="12" height="12" fill="#555"/>
+  <text x="448" y="651" fill="#ccc" font-size="9">Government conformance (batch MV)</text>
+  <rect x="660" y="640" width="12" height="12" fill="#ffab00"/>
+  <text x="678" y="651" fill="#ccc" font-size="9">Reference / metadata path</text>
+</svg>
